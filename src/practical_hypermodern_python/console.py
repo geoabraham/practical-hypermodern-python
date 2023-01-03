@@ -8,6 +8,5 @@ from . import __version__
 def main():
     """
     Practical Hyper-modern Python
-    :return:
     """
     click.echo("Hello World !!!")
