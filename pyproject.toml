@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "practical-hypermodern-python"
-version = "0.1.0"
+version = "0.1.1"
 description = "Practical hypermodern Python project"
 authors = ["Gerardo Abraham <geoabraham@tuta.io>"]
 license = "MIT"
@@ -16,7 +16,7 @@ click = "^8.1.3"
 [tool.poetry.dev-dependencies]
 
 [tool.poetry.scripts]
-hypermodern-python = "practical_hypermodern_python.console:main"
+practical-hypermodern-python = "practical_hypermodern_python.console:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
