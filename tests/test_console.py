@@ -9,6 +9,22 @@ def test_main_succeeds(runner, mock_requests_get):
     assert result.exit_code == 0
 
 
+def test_main_prints_title(runner, mock_requests_get):
+    result = runner.invoke(console.main)
+    assert "Título mockeado" in result.output
+
+
+def test_main_invokes_requests_get(runner, mock_requests_get):
+    runner.invoke(console.main)
+    assert mock_requests_get.called
+
+
+def test_main_uses_es_wikipedia_org(runner, mock_requests_get):
+    runner.invoke(console.main)
+    args, _ = mock_requests_get.call_args
+    assert "es.wikipedia.org" in args[0]
+
+
 @pytest.fixture
 def runner():
     return click.testing.CliRunner()
