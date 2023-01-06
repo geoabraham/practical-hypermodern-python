@@ -29,6 +29,7 @@ requests = "^2.28.1"
 pytest = "^7.2.0"
 coverage = { version = "^7.0.3", extras = ["toml"] }
 pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
 
 [tool.poetry.scripts]
 practical-hypermodern-python = "practical_hypermodern_python.console:main"
