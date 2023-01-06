@@ -12,4 +12,4 @@ def random_page(language="es"):
             return response.json()
     except requests.RequestException as err:
         message = str(err)
-        raise click.ClickException(message)
+        raise click.ClickException(message) from err
