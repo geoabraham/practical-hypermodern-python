@@ -25,6 +25,12 @@ def test_main_uses_es_wikipedia_org(runner, mock_requests_get):
     assert "es.wikipedia.org" in args[0]
 
 
+def test_main_fails_on_request_error(runner, mock_requests_get):
+    mock_requests_get.side_effect = Exception("Crash!")
+    result = runner.invoke(console.main)
+    assert result.exit_code == 1
+
+
 @pytest.fixture
 def runner():
     return click.testing.CliRunner()
