@@ -43,6 +43,12 @@ def test_main_uses_specified_language(runner, mock_wikipedia_random_page):
     mock_wikipedia_random_page.assert_called_with(language="de")
 
 
+@pytest.mark.e2e
+def test_main_succeeds_in_production_env(runner):
+    result = runner.invoke(console.main)
+    assert result.exit_code == 0
+
+
 @pytest.fixture
 def mock_wikipedia_random_page(mocker):
     return mocker.patch("practical_hypermodern_python.wikipedia.random_page")
