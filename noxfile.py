@@ -2,21 +2,21 @@ import tempfile
 
 import nox
 
-locations = "src", "tests", "./noxfile.py"
+nox.options.sessions = "lint", "mypy", "safety", "tests"
 
-nox.options.sessions = "lint", "safety", "tests"
+LOCATIONS = "src", "tests", "./noxfile.py"
 
 
 @nox.session(python="3.8")
 def black(session):
-    args = session.posargs or locations
+    args = session.posargs or LOCATIONS
     install_with_constraints(session, "black")
     session.run("black", *args)
 
 
 @nox.session(python=["3.8", "3.7"])
 def lint(session):
-    args = session.posargs or locations
+    args = session.posargs or LOCATIONS
     install_with_constraints(
         session,
         "flake8",
@@ -26,6 +26,13 @@ def lint(session):
         "flake8-import-order",
     )
     session.run("flake8", *args)
+
+
+@nox.session(python=["3.8", "3.7"])
+def mypy(session):
+    args = session.posargs or LOCATIONS
+    install_with_constraints(session, "mypy")
+    session.run("mypy", *args)
 
 
 @nox.session(python="3.8")
