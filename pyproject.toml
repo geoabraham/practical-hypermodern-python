@@ -31,6 +31,7 @@ coverage = { version = "^7.0.3", extras = ["toml"] }
 pytest-cov = "^4.0.0"
 pytest-mock = "^3.10.0"
 nox = "^2022.11.21"
+mypy = "^0.991"
 
 [tool.poetry.scripts]
 practical-hypermodern-python = "practical_hypermodern_python.console:main"
