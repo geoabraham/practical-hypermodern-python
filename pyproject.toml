@@ -32,6 +32,7 @@ pytest-cov = "^4.0.0"
 pytest-mock = "^3.10.0"
 nox = "^2022.11.21"
 mypy = "^0.991"
+pytype = {version = "^2022.12.15", python = "3.7"}
 
 [tool.poetry.scripts]
 practical-hypermodern-python = "practical_hypermodern_python.console:main"
