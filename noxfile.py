@@ -2,7 +2,7 @@ import tempfile
 
 import nox
 
-locations = "src", "tests", "noxfile.py"
+locations = "src", "tests", "./noxfile.py"
 
 nox.options.sessions = "lint", "safety", "tests"
 
@@ -59,6 +59,7 @@ def install_with_constraints(session, *args, **kwargs):
         session.run(
             "poetry",
             "export",
+            "--without-hashes",
             "--dev",
             "--format=requirements.txt",
             f"--output={requirements.name}",
