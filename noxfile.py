@@ -11,14 +11,14 @@ PACKAGE = "practical_hypermodern_python"
 
 
 @nox.session(python="3.8")
-def black(session) -> None:
+def black(session: Session) -> None:
     args = session.posargs or LOCATIONS
     install_with_constraints(session, "black")
     session.run("black", *args)
 
 
 @nox.session(python=["3.8", "3.7"])
-def lint(session) -> None:
+def lint(session: Session) -> None:
     args = session.posargs or LOCATIONS
     install_with_constraints(
         session,
@@ -32,21 +32,21 @@ def lint(session) -> None:
 
 
 @nox.session(python=["3.8", "3.7"])
-def mypy(session) -> None:
+def mypy(session: Session) -> None:
     args = session.posargs or LOCATIONS
     install_with_constraints(session, "mypy")
     session.run("mypy", *args)
 
 
 @nox.session(python="3.7")
-def pytype(session) -> None:
+def pytype(session: Session) -> None:
     args = session.posargs or ["--disable=import-error", *LOCATIONS]
     install_with_constraints(session, "pytype")
     session.run("pytype", *args)
 
 
 @nox.session(python="3.8")
-def safety(session) -> None:
+def safety(session: Session) -> None:
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
             "poetry",
@@ -62,7 +62,7 @@ def safety(session) -> None:
 
 
 @nox.session(python=["3.8", "3.7"])
-def tests(session) -> None:
+def tests(session: Session) -> None:
     args = session.posargs or ["--cov", "-m", "not e2e"]
     session.run("poetry", "install", "--no-dev", external=True)
     install_with_constraints(
@@ -72,7 +72,7 @@ def tests(session) -> None:
 
 
 @nox.session(python=["3.8", "3.7"])
-def typeguard(session) -> None:
+def typeguard(session: Session) -> None:
     args = session.posargs or ["-m", "not e2e"]
     session.run("poetry", "install", "--no-dev", external=True)
     install_with_constraints(session, "pytest", "pytest-mock", "typeguard")
