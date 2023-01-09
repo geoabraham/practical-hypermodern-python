@@ -21,8 +21,8 @@ def main(language: str) -> None:
     """
     data = wikipedia.random_page(language=language)
 
-    title = data["title"]
-    extract = data["extract"]
+    title = data.title
+    extract = data.title
 
     click.secho(title, fg="green")
     click.echo(textwrap.fill(extract))

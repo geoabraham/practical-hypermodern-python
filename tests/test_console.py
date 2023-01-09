@@ -2,7 +2,7 @@ import click.testing
 import pytest
 import requests
 
-from practical_hypermodern_python import console
+from practical_hypermodern_python import console, wikipedia
 
 
 def test_main_succeeds(runner, mock_requests_get):
@@ -52,6 +52,11 @@ def test_main_succeeds_in_production_env(runner):
 @pytest.fixture
 def mock_wikipedia_random_page(mocker):
     return mocker.patch("practical_hypermodern_python.wikipedia.random_page")
+
+
+def test_random_page_returns_page(mock_requests_get):
+    page = wikipedia.random_page()
+    assert isinstance(page, wikipedia.Page)
 
 
 @pytest.fixture
