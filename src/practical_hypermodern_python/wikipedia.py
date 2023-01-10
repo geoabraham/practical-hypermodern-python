@@ -25,15 +25,25 @@ schema = desert.schema(Page, meta={"unknown": marshmallow.EXCLUDE})
 
 def random_page(language: str = "es") -> Page:
     """Return a random page.
+
     Performs a GET request to the /page/random/summary endpoint.
+
     Args:
         language: The Wikipedia language edition. By default, the Spanish
             Wikipedia is used ("es").
+
     Returns:
         A page resource.
+
     Raises:
         ClickException: The HTTP request failed or the HTTP response
             contained an invalid body.
+
+    Example:
+        >>> from practical_hypermodern_python import wikipedia
+        >>> page = wikipedia.random_page(language="en")
+        >>> bool(page.title)
+        True
     """
     url = API_URL.format(language=language)
     try:

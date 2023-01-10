@@ -38,6 +38,7 @@ pytype = {version = "^2022.12.15", python = "3.7"}
 typeguard = "^2.13.3"
 pytest-pspec = "^0.0.4"
 darglint = "^1.8.1"
+xdoctest = "^1.1.0"
 
 [tool.poetry.scripts]
 practical-hypermodern-python = "practical_hypermodern_python.console:main"
