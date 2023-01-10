@@ -1,11 +1,10 @@
 """Test cases for the console module."""
 from unittest.mock import Mock
 
-import click.testing
-import pytest
-import requests
-from pytest_mock import MockFixture
 from click.testing import CliRunner
+import pytest
+from pytest_mock import MockFixture
+import requests
 
 from practical_hypermodern_python import console
 
@@ -71,4 +70,4 @@ def mock_wikipedia_random_page(mocker: MockFixture) -> Mock:
 @pytest.fixture
 def runner() -> CliRunner:
     """Fixture for invoking command-line interfaces."""
-    return click.testing.CliRunner()
+    return CliRunner()
