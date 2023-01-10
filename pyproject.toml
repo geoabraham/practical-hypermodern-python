@@ -36,6 +36,7 @@ nox = "^2022.11.21"
 mypy = "^0.991"
 pytype = {version = "^2022.12.15", python = "3.7"}
 typeguard = "^2.13.3"
+pytest-pspec = "^0.0.4"
 
 [tool.poetry.scripts]
 practical-hypermodern-python = "practical_hypermodern_python.console:main"

@@ -426,6 +426,18 @@ pytest = ">=5.0"
 dev = ["pre-commit", "tox", "pytest-asyncio"]
 
 [[package]]
+name = "pytest-pspec"
+version = "0.0.4"
+description = "A rspec format reporter for Python ptest"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+pytest = ">=3.0.0"
+six = ">=1.11.0"
+
+[[package]]
 name = "pytype"
 version = "2022.12.15"
 description = "Python type inferencer"
@@ -471,6 +483,14 @@ urllib3 = ">=1.21.1,<1.27"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "six"
+version = "1.16.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "dev"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "tabulate"
@@ -585,7 +605,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-co
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "5036f655fa5b605a1541b809a4068212230bba850751c2ce0de2a50a3a09fe7d"
+content-hash = "9bc06aebb0dbc11fb0b3342170db78145165b131a4adf0f3d8312cfc9887a256"
 
 [metadata.files]
 argcomplete = [
@@ -877,6 +897,10 @@ pytest-mock = [
     {file = "pytest-mock-3.10.0.tar.gz", hash = "sha256:fbbdb085ef7c252a326fd8cdcac0aa3b1333d8811f131bdcc701002e1be7ed4f"},
     {file = "pytest_mock-3.10.0-py3-none-any.whl", hash = "sha256:f4c973eeae0282963eb293eb173ce91b091a79c1334455acfac9ddee8a1c784b"},
 ]
+pytest-pspec = [
+    {file = "pytest-pspec-0.0.4.tar.gz", hash = "sha256:5c0b0c9e964d5066cc5f2a2e1b296ad1313abbf58c4fd75014553fdf65bfe67a"},
+    {file = "pytest_pspec-0.0.4-py2.py3-none-any.whl", hash = "sha256:f80cc46f8896524bfe68750f3a5324bad8d4cb5112e90004bfdaafb7248e5cfd"},
+]
 pytype = [
     {file = "pytype-2022.12.15-cp310-cp310-macosx_10_15_x86_64.whl", hash = "sha256:1ccf326d21c67a4551714f676cfdc13967a6adf44686ef4a40f188dce19e8f5a"},
     {file = "pytype-2022.12.15-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:ff4fbc524fbdadbc35a22db40b052bfb99644bf2381ea68493c91efc66ec4447"},
@@ -937,6 +961,10 @@ pyyaml = [
 requests = [
     {file = "requests-2.28.1-py3-none-any.whl", hash = "sha256:8fefa2a1a1365bf5520aac41836fbee479da67864514bdb821f31ce07ce65349"},
     {file = "requests-2.28.1.tar.gz", hash = "sha256:7c5599b102feddaa661c826c56ab4fee28bfd17f5abca1ebbe3e7f19d7c97983"},
+]
+six = [
+    {file = "six-1.16.0-py2.py3-none-any.whl", hash = "sha256:8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"},
+    {file = "six-1.16.0.tar.gz", hash = "sha256:1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"},
 ]
 tabulate = [
     {file = "tabulate-0.9.0-py3-none-any.whl", hash = "sha256:024ca478df22e9340661486f85298cff5f6dcdba14f3813e8830015b9ed1948f"},
